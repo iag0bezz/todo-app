@@ -29,6 +29,7 @@ $ yarn install OR npm install
 $ docker-compose up -D
 
 # Gerar um arquivo .env e inserir o modelo dentro de .env.example
+# Configurar o valor "DATABASE_URL" para o padrão Prisma (https://www.prisma.io/docs/concepts/database-connectors/postgresql)
 
 # Executar os testes 
 $ yarn test OR npm run test
