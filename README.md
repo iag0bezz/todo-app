@@ -44,8 +44,8 @@ $ cd todo-app
 
 # Siga os passos de cada serviço em suas respectivas pastas.
 
-client/README.md
-server/README.md
+$ cd client/README.md
+$ cd server/README.md
 ```
 
 ## 📝 Licença
