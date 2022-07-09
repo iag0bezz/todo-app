@@ -31,6 +31,9 @@ $ docker-compose up -D
 # Gerar um arquivo .env e inserir o modelo dentro de .env.example
 # Configurar o valor "DATABASE_URL" para o padrão Prisma (https://www.prisma.io/docs/concepts/database-connectors/postgresql)
 
+# Gerar o cliente usando Prisma
+$ yarn prisma generate OR npx prisma generate
+
 # Executar os testes 
 $ yarn test OR npm run test
 
