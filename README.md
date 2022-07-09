@@ -50,7 +50,7 @@ $ cd client/README.md
 $ cd server/README.md
 ```
 
-## 🤔 Como contruibuir
+## 🤔 Como contribuir
 
 As contribuições são o que tornam a comunidade de código aberto um lugar tão incrível para aprender, inspirar e criar. Quaisquer contribuições que você fizer são **MUITO APRECIADAS**.
 
