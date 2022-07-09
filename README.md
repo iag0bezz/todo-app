@@ -1,5 +1,5 @@
 <h3 align="center">
-  📃 <strong>TODO APP 📃
+  📃 <strong>TODO APP 📃</strong>
 </h3>
 
 <p align="center">
@@ -20,6 +20,8 @@
   <a href="#-projeto">💻 Projeto</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-como-executar">🚀 Como executar</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-como-contribuir">🤔 Contribuir</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-licença">📝 Licença</a>
 <br>
@@ -47,6 +49,16 @@ $ cd todo-app
 $ cd client/README.md
 $ cd server/README.md
 ```
+
+## 🤔 Como contruibuir
+
+As contribuições são o que tornam a comunidade de código aberto um lugar tão incrível para aprender, inspirar e criar. Quaisquer contribuições que você fizer são **MUITO APRECIADAS**.
+
+1. Faça um Fork deste projeto
+2. Crie sua feature em uma nova Branch (`git checkout -b feature/AmazingFeature`)
+3. Faça commit de suas modificações (`git commit -m 'Minha incrivel feature'`)
+4. Dê um push para sua branch (`git push origin feature/AmazingFeature`)
+5. Abra um novo pull request
 
 ## 📝 Licença
 
