@@ -1,10 +1,15 @@
-import { ICreateTodoDTO } from "@modules/todo/dtos/ICreateTodoDTO";
-import { ITodosRepository } from "@modules/todo/repositories/ITodosRepository";
-import { Todo } from "@prisma/client";
-import { prisma } from "@shared/infra/database/prisma";
+import { ICreateTodoDTO } from '@modules/todo/dtos/ICreateTodoDTO';
+import { ITodosRepository } from '@modules/todo/repositories/ITodosRepository';
+import { Todo } from '@prisma/client';
+
+import { prisma } from '@shared/infra/database/prisma';
 
 export class PrismaTodosRepository implements ITodosRepository {
-  async create({ content, completed = false, user_id }: ICreateTodoDTO): Promise<Todo> {
+  async create({
+    content,
+    completed = false,
+    user_id,
+  }: ICreateTodoDTO): Promise<Todo> {
     const todo = await prisma.todo.create({
       data: {
         content,
@@ -20,7 +25,7 @@ export class PrismaTodosRepository implements ITodosRepository {
     const todo = await prisma.todo.delete({
       where: {
         id,
-      }
+      },
     });
 
     return todo;

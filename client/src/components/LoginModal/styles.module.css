@@ -1,0 +1,62 @@
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.content > * {
+  margin: 0.5rem;
+}
+
+.content input {
+  height: 3.5rem;
+  border-radius: 8px;
+  padding-left: 0.75rem;
+  background: var(--gray-500);
+
+  border: none;
+  color: var(--gray-100);
+
+  transition: border 0.2s, background 0.2s;
+}
+
+.content input:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.content input:focus {
+  border: 1px solid var(--purple-300);
+}
+
+.content button {
+  height: 3.5rem;
+  border-radius: 8px;
+  background: var(--purple-300);
+  color: var(--gray-100);
+  font-weight: 700;
+  border: none;
+
+  cursor: pointer;
+
+  transition: background 0.2s;
+}
+
+.content button:hover {
+  background: var(--purple-600);
+}
+
+.content p {
+  font-size: 12px;
+}
+
+.content p span {
+  color: var(--purple-300);
+  margin-left: 0.15rem;
+
+  cursor: pointer;
+
+  transition: color 0.2s;
+}
+
+.content p span:hover {
+  color: var(--purple-600);
+}

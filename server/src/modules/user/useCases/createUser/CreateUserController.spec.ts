@@ -1,6 +1,7 @@
+import request from 'supertest';
+
 import { prisma } from '@shared/infra/database/prisma';
 import { app } from '@shared/infra/http/app';
-import request from 'supertest';
 
 describe('Create User Controller', () => {
   afterAll(async () => {
@@ -28,6 +29,6 @@ describe('Create User Controller', () => {
     });
 
     expect(response.status).toBe(409);
-    expect(response.body.message).toBe('authentication.user-already-exists')
+    expect(response.body.message).toBe('authentication.user-already-exists');
   });
 });

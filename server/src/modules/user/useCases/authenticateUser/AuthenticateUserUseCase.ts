@@ -1,10 +1,11 @@
-import authConfig from "@config/auth";
-import { IAuthenticateUserDTO } from "@modules/user/dtos/IAuthenticateUserDTO";
-import { IUsersRepository } from "@modules/user/repositories/IUsersRepository";
-import { IHashProvider } from "@shared/container/providers/HashProvider/IHashProvider";
-import { ITokenProvider } from "@shared/container/providers/TokenProvider/ITokenProvider";
-import { HttpError } from "@shared/errors/HttpError";
-import { container, inject, injectable } from "tsyringe";
+import authConfig from '@config/auth';
+import { IAuthenticateUserDTO } from '@modules/user/dtos/IAuthenticateUserDTO';
+import { IUsersRepository } from '@modules/user/repositories/IUsersRepository';
+import { container, inject, injectable } from 'tsyringe';
+
+import { IHashProvider } from '@shared/container/providers/HashProvider/IHashProvider';
+import { ITokenProvider } from '@shared/container/providers/TokenProvider/ITokenProvider';
+import { HttpError } from '@shared/errors/HttpError';
 
 type IRequest = IAuthenticateUserDTO;
 
@@ -22,7 +23,7 @@ interface IResponse {
 export class AuthenticateUserUseCase {
   constructor(
     @inject('UsersRepository')
-    private usersRepository: IUsersRepository
+    private usersRepository: IUsersRepository,
   ) {}
 
   async execute({ username, password }: IRequest): Promise<IResponse> {
@@ -48,7 +49,7 @@ export class AuthenticateUserUseCase {
       { id: user.id, username: user.username },
       user.id,
       access.secret,
-      access.expires_in
+      access.expires_in,
     );
 
     const refresh_token = await tokenProvider.sign(

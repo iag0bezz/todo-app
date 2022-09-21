@@ -1,9 +1,10 @@
 import authConfig from '@config/auth';
-import { IUsersRepository } from "@modules/user/repositories/IUsersRepository";
-import { ITokenProvider } from "@shared/container/providers/TokenProvider/ITokenProvider";
-import { HttpError } from "@shared/errors/HttpError";
-import { NextFunction, Request, Response } from "express";
-import { container } from "tsyringe";
+import { IUsersRepository } from '@modules/user/repositories/IUsersRepository';
+import { NextFunction, Request, Response } from 'express';
+import { container } from 'tsyringe';
+
+import { ITokenProvider } from '@shared/container/providers/TokenProvider/ITokenProvider';
+import { HttpError } from '@shared/errors/HttpError';
 
 export async function ensureAuthenticated(
   request: Request,
@@ -26,7 +27,8 @@ export async function ensureAuthenticated(
       authConfig.access.secret,
     );
 
-    const usersRepository = container.resolve<IUsersRepository>('UsersRepository');
+    const usersRepository =
+      container.resolve<IUsersRepository>('UsersRepository');
 
     const user = await usersRepository.findById(user_id);
 
@@ -36,7 +38,7 @@ export async function ensureAuthenticated(
 
     request.user = {
       id: user.id,
-    }
+    };
 
     next();
   } catch {

@@ -1,10 +1,10 @@
-import { ITodosRepository } from "@modules/todo/repositories/ITodosRepository";
-import { Todo } from "@prisma/client";
-import { inject, injectable } from "tsyringe";
+import { ITodosRepository } from '@modules/todo/repositories/ITodosRepository';
+import { Todo } from '@prisma/client';
+import { inject, injectable } from 'tsyringe';
 
 type IRequest = {
   user_id: string;
-}
+};
 
 type IResponse = Todo[];
 

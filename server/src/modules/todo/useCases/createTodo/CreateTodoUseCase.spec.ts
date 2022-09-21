@@ -1,9 +1,11 @@
-import { InMemoryTodosRepository } from "@modules/todo/repositories/in-memory/InMemoryTodosRepository";
-import { ITodosRepository } from "@modules/todo/repositories/ITodosRepository";
-import { InMemoryUsersRepository } from "@modules/user/repositories/in-memory/InMemoryUsersRepository";
-import { IUsersRepository } from "@modules/user/repositories/IUsersRepository";
-import { HttpError } from "@shared/errors/HttpError";
-import { CreateTodoUseCase } from "./CreateTodoUseCase";
+import { InMemoryTodosRepository } from '@modules/todo/repositories/in-memory/InMemoryTodosRepository';
+import { ITodosRepository } from '@modules/todo/repositories/ITodosRepository';
+import { InMemoryUsersRepository } from '@modules/user/repositories/in-memory/InMemoryUsersRepository';
+import { IUsersRepository } from '@modules/user/repositories/IUsersRepository';
+
+import { HttpError } from '@shared/errors/HttpError';
+
+import { CreateTodoUseCase } from './CreateTodoUseCase';
 
 let usersRepository: IUsersRepository;
 let todosRepository: ITodosRepository;
@@ -13,10 +15,7 @@ describe('Create Todo UseCase', () => {
   beforeEach(() => {
     todosRepository = new InMemoryTodosRepository();
     usersRepository = new InMemoryUsersRepository();
-    createTodoUseCase = new CreateTodoUseCase(
-      todosRepository,
-      usersRepository,
-    );
+    createTodoUseCase = new CreateTodoUseCase(todosRepository, usersRepository);
   });
 
   it('should be able to create todo', async () => {
@@ -44,8 +43,6 @@ describe('Create Todo UseCase', () => {
         completed: true,
         user_id: 'invalid-user-id',
       });
-    }).rejects.toStrictEqual(
-      new HttpError('todo.user-not-found', 404)
-    );
+    }).rejects.toStrictEqual(new HttpError('todo.user-not-found', 404));
   });
 });

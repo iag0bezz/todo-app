@@ -1,4 +1,4 @@
-import { HttpError } from "./HttpError";
+import { HttpError } from './HttpError';
 
 export class ValidationError extends HttpError {
   public readonly errors: string[];

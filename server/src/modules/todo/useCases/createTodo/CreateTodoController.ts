@@ -1,7 +1,7 @@
-import { ICreateTodoDTO } from "@modules/todo/dtos/ICreateTodoDTO";
-import { Request, Response } from "express";
-import { container } from "tsyringe";
-import { CreateTodoUseCase } from "./CreateTodoUseCase";
+import { Request, Response } from 'express';
+import { container } from 'tsyringe';
+
+import { CreateTodoUseCase } from './CreateTodoUseCase';
 
 export class CreateTodoController {
   async handle(request: Request, response: Response): Promise<Response> {

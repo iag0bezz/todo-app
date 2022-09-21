@@ -1,7 +1,8 @@
-import { IAuthenticateUserDTO } from "@modules/user/dtos/IAuthenticateUserDTO";
-import { Request, Response } from "express";
-import { container } from "tsyringe";
-import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase";
+import { IAuthenticateUserDTO } from '@modules/user/dtos/IAuthenticateUserDTO';
+import { Request, Response } from 'express';
+import { container } from 'tsyringe';
+
+import { AuthenticateUserUseCase } from './AuthenticateUserUseCase';
 
 export class AuthenticateUserController {
   async handle(request: Request, response: Response): Promise<Response> {
@@ -11,7 +12,7 @@ export class AuthenticateUserController {
 
     const data = await authenticateUserUseCase.execute({
       username,
-      password
+      password,
     });
 
     return response.json(data);

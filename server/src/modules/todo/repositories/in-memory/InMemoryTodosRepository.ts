@@ -1,8 +1,8 @@
-import { ICreateTodoDTO } from "@modules/todo/dtos/ICreateTodoDTO";
-import { Todo } from "@prisma/client";
-import { ITodosRepository } from "../ITodosRepository";
-
+import { ICreateTodoDTO } from '@modules/todo/dtos/ICreateTodoDTO';
+import { Todo } from '@prisma/client';
 import { randomUUID } from 'node:crypto';
+
+import { ITodosRepository } from '../ITodosRepository';
 
 export class InMemoryTodosRepository implements ITodosRepository {
   private todos: Todo[] = [];
@@ -43,7 +43,7 @@ export class InMemoryTodosRepository implements ITodosRepository {
 
   async findByUser(user_id: string): Promise<Todo[]> {
     const todos = this.todos.filter(todo => todo.user_id === user_id);
-    
+
     return todos;
   }
 

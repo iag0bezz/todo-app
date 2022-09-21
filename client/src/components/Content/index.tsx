@@ -5,8 +5,17 @@ import { EmptyList } from '../EmptyList';
 import { Task as TaskType } from '../../typing';
 import { TaskList } from '../TaskList';
 import { useEffect, useState } from 'react';
+import { useStore } from 'zustand';
+import { useAuth } from '../../hooks/useAuth';
+import { LoginModal } from '../LoginModal';
 
 export const Content = () => {
+  const state = useStore(
+    useAuth
+  );
+
+  const [isModalOpen, setModalOpen] = useState(false);
+
   const [content, setContent] = useState('');
 
   const [tasks, setTasks] = useState<TaskType[]>(() => {
@@ -66,6 +75,28 @@ export const Content = () => {
         <input required onChange={(event) => setContent(event?.target.value)} placeholder='Adicione uma nova tarefa' type='text' />
         <button type="submit">CRIAR <PlusCircle size={16} /></button>
       </form>
+
+      { 
+        !state.authenticated ?
+        <span className={styles.offline}>
+          Você está em uma visualização offline, para se autenticar
+          <span onClick={() => setModalOpen(true)}>
+            Clique aqui
+          </span>
+        </span>
+        : 
+        <span className={styles.online}>
+          Você está logado como { state.user?.username }
+          <span onClick={() => state.logOut()}>
+            Clique para sair
+          </span>
+        </span>
+      }
+
+      <LoginModal 
+        open={isModalOpen}
+        toggle={setModalOpen}
+      />
       
       <div className={styles.info}>
         <div className={styles.tasks}>

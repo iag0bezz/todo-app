@@ -1,9 +1,10 @@
-import { ICreateUserDTO } from "@modules/user/dtos/ICreateUserDTO";
-import { IUsersRepository } from "@modules/user/repositories/IUsersRepository";
-import { User } from "@prisma/client";
-import { IHashProvider } from "@shared/container/providers/HashProvider/IHashProvider";
-import { HttpError } from "@shared/errors/HttpError";
-import { container, inject, injectable } from "tsyringe";
+import { ICreateUserDTO } from '@modules/user/dtos/ICreateUserDTO';
+import { IUsersRepository } from '@modules/user/repositories/IUsersRepository';
+import { User } from '@prisma/client';
+import { container, inject, injectable } from 'tsyringe';
+
+import { IHashProvider } from '@shared/container/providers/HashProvider/IHashProvider';
+import { HttpError } from '@shared/errors/HttpError';
 
 type IRequest = ICreateUserDTO;
 
@@ -30,6 +31,6 @@ export class CreateUserUseCase {
       password: passwordHash,
     });
 
-    return user;
+    return { ...user, password: undefined };
   }
 }

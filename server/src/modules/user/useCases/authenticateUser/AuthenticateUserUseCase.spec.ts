@@ -1,7 +1,9 @@
-import { InMemoryUsersRepository } from "@modules/user/repositories/in-memory/InMemoryUsersRepository";
-import { IUsersRepository } from "@modules/user/repositories/IUsersRepository";
-import { HttpError } from "@shared/errors/HttpError";
-import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase";
+import { InMemoryUsersRepository } from '@modules/user/repositories/in-memory/InMemoryUsersRepository';
+import { IUsersRepository } from '@modules/user/repositories/IUsersRepository';
+
+import { HttpError } from '@shared/errors/HttpError';
+
+import { AuthenticateUserUseCase } from './AuthenticateUserUseCase';
 
 let usersRepository: IUsersRepository;
 let authenticateUserUseCase: AuthenticateUserUseCase;
@@ -9,7 +11,8 @@ let authenticateUserUseCase: AuthenticateUserUseCase;
 /*
   Password: password
 */
-const HASHED_PASSWORD = "$2b$08$6MtI/rsoItDEPGwN7Vp.DeVELnOOMbSvVcbnKaK0wYiAUSG9r03b.";
+const HASHED_PASSWORD =
+  '$2b$08$6MtI/rsoItDEPGwN7Vp.DeVELnOOMbSvVcbnKaK0wYiAUSG9r03b.';
 
 describe('Authenticate User UseCase', () => {
   beforeEach(() => {
@@ -41,7 +44,7 @@ describe('Authenticate User UseCase', () => {
         password: 'invalid-password',
       });
     }).rejects.toStrictEqual(
-      new HttpError('authentication.invalid-credentials', 401)
+      new HttpError('authentication.invalid-credentials', 401),
     );
   });
 
@@ -57,7 +60,7 @@ describe('Authenticate User UseCase', () => {
         password: 'invalid-password',
       });
     }).rejects.toStrictEqual(
-      new HttpError('authentication.invalid-credentials', 401)
+      new HttpError('authentication.invalid-credentials', 401),
     );
   });
 });

@@ -1,8 +1,10 @@
-import { ICreateUserDTO } from "@modules/user/dtos/ICreateUserDTO";
-import { InMemoryUsersRepository } from "@modules/user/repositories/in-memory/InMemoryUsersRepository";
-import { IUsersRepository } from "@modules/user/repositories/IUsersRepository";
-import { HttpError } from "@shared/errors/HttpError";
-import { CreateUserUseCase } from "./CreateUserUseCase";
+import { ICreateUserDTO } from '@modules/user/dtos/ICreateUserDTO';
+import { InMemoryUsersRepository } from '@modules/user/repositories/in-memory/InMemoryUsersRepository';
+import { IUsersRepository } from '@modules/user/repositories/IUsersRepository';
+
+import { HttpError } from '@shared/errors/HttpError';
+
+import { CreateUserUseCase } from './CreateUserUseCase';
 
 let usersRepository: IUsersRepository;
 let createUserUseCase: CreateUserUseCase;
@@ -10,9 +12,7 @@ let createUserUseCase: CreateUserUseCase;
 describe('Register User UseCase', () => {
   beforeEach(() => {
     usersRepository = new InMemoryUsersRepository();
-    createUserUseCase = new CreateUserUseCase(
-      usersRepository
-    );
+    createUserUseCase = new CreateUserUseCase(usersRepository);
   });
 
   it('should be able to create user', async () => {
@@ -43,7 +43,7 @@ describe('Register User UseCase', () => {
         password: 'test-password',
       });
     }).rejects.toStrictEqual(
-      new HttpError('authentication.user-already-exists', 409)
+      new HttpError('authentication.user-already-exists', 409),
     );
   });
 });

@@ -1,19 +1,20 @@
-import { User } from '@prisma/client';
+import request from 'supertest';
+
 import { prisma } from '@shared/infra/database/prisma';
 import { app } from '@shared/infra/http/app';
-import request from 'supertest';
 
 /*
   Password: password
 */
-const HASHED_PASSWORD = "$2b$08$6MtI/rsoItDEPGwN7Vp.DeVELnOOMbSvVcbnKaK0wYiAUSG9r03b.";
+const HASHED_PASSWORD =
+  '$2b$08$6MtI/rsoItDEPGwN7Vp.DeVELnOOMbSvVcbnKaK0wYiAUSG9r03b.';
 
 describe('List Todo Controller', () => {
   beforeAll(async () => {
     const user = await prisma.user.create({
       data: {
         username: 'Test Username',
-        password: HASHED_PASSWORD, 
+        password: HASHED_PASSWORD,
       },
     });
 
@@ -46,7 +47,8 @@ describe('List Todo Controller', () => {
 
     const { access_token } = response_token.body;
 
-    const response = await request(app).get('/todos')
+    const response = await request(app)
+      .get('/todos')
       .set({
         Authorization: `Bearer ${access_token}`,
       });

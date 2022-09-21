@@ -1,7 +1,8 @@
-import { Router } from "express";
-import { authenticateRoutes } from "./authenticate.routes";
-import { todosRoutes } from "./todos.routes";
-import { userRoutes } from "./users.routes";
+import { Router } from 'express';
+
+import { authenticateRoutes } from './authenticate.routes';
+import { todosRoutes } from './todos.routes';
+import { userRoutes } from './users.routes';
 
 const routes = Router();
 

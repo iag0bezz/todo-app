@@ -1,5 +1,6 @@
-import { Todo } from "@prisma/client";
-import { ICreateTodoDTO } from "../dtos/ICreateTodoDTO";
+import { Todo } from '@prisma/client';
+
+import { ICreateTodoDTO } from '../dtos/ICreateTodoDTO';
 
 export interface ITodosRepository {
   create(data: ICreateTodoDTO): Promise<Todo>;

@@ -1,8 +1,9 @@
-import { ICreateTodoDTO } from "@modules/todo/dtos/ICreateTodoDTO";
-import { ITodosRepository } from "@modules/todo/repositories/ITodosRepository";
-import { IUsersRepository } from "@modules/user/repositories/IUsersRepository";
-import { HttpError } from "@shared/errors/HttpError";
-import { inject, injectable } from "tsyringe";
+import { ICreateTodoDTO } from '@modules/todo/dtos/ICreateTodoDTO';
+import { ITodosRepository } from '@modules/todo/repositories/ITodosRepository';
+import { IUsersRepository } from '@modules/user/repositories/IUsersRepository';
+import { inject, injectable } from 'tsyringe';
+
+import { HttpError } from '@shared/errors/HttpError';
 
 type IRequest = ICreateTodoDTO;
 

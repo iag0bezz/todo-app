@@ -14,9 +14,13 @@
   margin-top: 0.85rem;
 }
 
-.text {
+.textDiv {
   width: 100%;
-  margin: 0 0.75rem;
+}
+
+.text {
+  margin: 0.125rem 0.75rem;
+  word-wrap: break-word;
 
   color: var(--gray-100);
 }

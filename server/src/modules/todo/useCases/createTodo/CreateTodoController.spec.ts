@@ -1,12 +1,13 @@
-import { User } from '@prisma/client';
+import request from 'supertest';
+
 import { prisma } from '@shared/infra/database/prisma';
 import { app } from '@shared/infra/http/app';
-import request from 'supertest';
 
 /*
   Password: password
 */
-const HASHED_PASSWORD = "$2b$08$6MtI/rsoItDEPGwN7Vp.DeVELnOOMbSvVcbnKaK0wYiAUSG9r03b.";
+const HASHED_PASSWORD =
+  '$2b$08$6MtI/rsoItDEPGwN7Vp.DeVELnOOMbSvVcbnKaK0wYiAUSG9r03b.';
 
 describe('Create Todo Controller', () => {
   beforeAll(async () => {
@@ -18,7 +19,7 @@ describe('Create Todo Controller', () => {
     });
   });
 
-  afterAll(async () => {;
+  afterAll(async () => {
     await prisma.user.deleteMany();
     await prisma.$disconnect();
   });
@@ -40,6 +41,8 @@ describe('Create Todo Controller', () => {
       .set({
         Authorization: `Bearer ${access_token}`,
       });
+
+    console.log(response);
 
     expect(response.status).toBe(201);
     expect(response.body).toHaveProperty('id');

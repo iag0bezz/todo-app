@@ -6,7 +6,8 @@ import { app } from '@shared/infra/http/app';
 /*
   Password: password
 */
-const HASHED_PASSWORD = "$2b$08$6MtI/rsoItDEPGwN7Vp.DeVELnOOMbSvVcbnKaK0wYiAUSG9r03b.";
+const HASHED_PASSWORD =
+  '$2b$08$6MtI/rsoItDEPGwN7Vp.DeVELnOOMbSvVcbnKaK0wYiAUSG9r03b.';
 
 describe('Authenticate User Controller', () => {
   beforeAll(async () => {
@@ -16,7 +17,7 @@ describe('Authenticate User Controller', () => {
         password: HASHED_PASSWORD,
       },
     });
-  })
+  });
 
   afterAll(async () => {
     await prisma.user.deleteMany();
@@ -54,5 +55,5 @@ describe('Authenticate User Controller', () => {
 
     expect(response.status).toBe(401);
     expect(response.body.message).toBe('authentication.invalid-credentials');
-  })
+  });
 });

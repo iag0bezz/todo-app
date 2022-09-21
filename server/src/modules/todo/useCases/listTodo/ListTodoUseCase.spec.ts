@@ -1,6 +1,7 @@
-import { InMemoryTodosRepository } from "@modules/todo/repositories/in-memory/InMemoryTodosRepository";
-import { ITodosRepository } from "@modules/todo/repositories/ITodosRepository";
-import { ListTodoUseCase } from "./ListTodoUseCase";
+import { InMemoryTodosRepository } from '@modules/todo/repositories/in-memory/InMemoryTodosRepository';
+import { ITodosRepository } from '@modules/todo/repositories/ITodosRepository';
+
+import { ListTodoUseCase } from './ListTodoUseCase';
 
 let todosRepository: ITodosRepository;
 let listTodoUseCase: ListTodoUseCase;
@@ -8,9 +9,7 @@ let listTodoUseCase: ListTodoUseCase;
 describe('List Todo UseCase', () => {
   beforeEach(() => {
     todosRepository = new InMemoryTodosRepository();
-    listTodoUseCase = new ListTodoUseCase(
-      todosRepository
-    );
+    listTodoUseCase = new ListTodoUseCase(todosRepository);
   });
 
   it('should be able to list user todos', async () => {
