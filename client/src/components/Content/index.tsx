@@ -16,7 +16,7 @@ export const Content = () => {
       ) as TaskType[]
     }
 
-    return tasks;
+    return [];
   });
 
   useEffect(() => {
