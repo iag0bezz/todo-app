@@ -1,0 +1,84 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content .form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: calc(0px - 2.15rem);
+}
+
+.content .form input[type="text"] {
+  background-color: var(--gray-500);
+  color: var(--gray-300);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--gray-700);
+
+  line-height: 1.4;
+
+  width: 40rem;
+}
+
+.content .form input:focus {
+  color: var(--gray-100);
+}
+
+.content .form button {
+  background-color: var(--blue-600);
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  color: var(--gray-100);
+  margin: 0.5rem;
+
+  line-height: 1.4;
+  font-weight: bold;
+
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  gap: 0.5rem;
+
+  transition: background 0.2s;
+}
+
+.content .form button:hover {
+  background: var(--blue-400);
+}
+
+.content .info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0px;
+
+  margin-top: 4rem;
+
+  width: 46rem;
+}
+
+.content .info span {
+  background: var(--gray-400);
+  padding: 2px 0.5rem;
+  border-radius: 999px;
+  color: var(--gray-100);
+  margin-left: 0.5rem;
+}
+
+.content .info .tasks strong {
+  color: var(--blue-400);
+}
+
+.content .info .finished strong {
+  color: var(--purple-300);
+}
