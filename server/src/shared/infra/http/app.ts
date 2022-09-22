@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import cors from 'cors';
 import express, { NextFunction, Request, Response } from 'express';
 
 import { HttpError } from '@shared/errors/HttpError';
@@ -13,6 +14,8 @@ import { routes } from './routes';
 const app = express();
 
 app.use(express.json());
+
+app.use(cors());
 
 app.use('/api/v1', routes);
 
@@ -29,6 +32,8 @@ app.use(
         timestamp: new Date(),
       });
     }
+
+    console.log(error);
 
     return response.status(500).json({
       message: 'internal-error',

@@ -5,8 +5,8 @@ import { Task } from '../Task';
 
 interface IProps {
   tasks: TaskType[];
-  handleDelete: (id: number) => void;
-  handleToggle: (id: number) => void;
+  handleDelete: (task: TaskType) => void;
+  handleToggle: (task: TaskType) => void;
 }
 
 export const TaskList = ({ tasks, handleToggle, handleDelete }: IProps) => {

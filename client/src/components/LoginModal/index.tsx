@@ -36,19 +36,32 @@ export const LoginModal = ({ open, toggle }: IProps) => {
 
   const [toggled, setToggled] = useState(false);
 
-  const handleRegister = (event: any) => {
+  const handleRegister = async (event: any) => {
     const { username, password } = retrieveValues(event);
+
+    const response = await api.post('/users', {
+      username,
+      password
+    });
+
+    console.log('REGISTER RESPONSE ', response.data);
   }
 
   const handleLogin = async (event: any) => {
     const { username, password } = retrieveValues(event);
  
-    const response = await api.post('/sessions', {
-      username,
-      password
-    });
+    const response = await state.signIn(username, password);
 
     console.log(response);
+
+    if (response.message !== 'authentication.success') {
+      alert(response);
+      return;
+    }
+
+    alert('Autenticado com sucesso');
+
+    toggle(false);
   }
 
   const retrieveValues = (event: any): { username: string, password: string } => {

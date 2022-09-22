@@ -1,5 +1,6 @@
 import authConfig from '@config/auth';
 import { IAuthenticateUserDTO } from '@modules/user/dtos/IAuthenticateUserDTO';
+import { ISessionsRepository } from '@modules/user/repositories/ISessionsRepository';
 import { IUsersRepository } from '@modules/user/repositories/IUsersRepository';
 import { container, inject, injectable } from 'tsyringe';
 
@@ -24,6 +25,8 @@ export class AuthenticateUserUseCase {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUsersRepository,
+    @inject('SessionsRepository')
+    private sessionsRepository: ISessionsRepository,
   ) {}
 
   async execute({ username, password }: IRequest): Promise<IResponse> {
@@ -58,6 +61,8 @@ export class AuthenticateUserUseCase {
       refresh.secret,
       refresh.expires_in,
     );
+
+    await this.sessionsRepository.create(refresh_token, user.id);
 
     return {
       access_token,

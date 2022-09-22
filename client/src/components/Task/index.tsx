@@ -5,14 +5,14 @@ import { Check, Trash } from 'phosphor-react';
 
 interface IProps {
   task: TaskType;
-  handleDelete: (id: number) => void;
-  handleToggle: (id: number) => void;
+  handleDelete: (task: TaskType) => void;
+  handleToggle: (task: TaskType) => void;
 }
 
 export const Task = ({ task, handleToggle, handleDelete }: IProps) => {
   return (
     <div className={styles.container}>
-      <div onClick={() => handleToggle(task.id)}>
+      <div onClick={() => handleToggle(task)}>
         <span
           className={`${styles.check} ${task.completed && styles.checked}`}
         >
@@ -23,7 +23,7 @@ export const Task = ({ task, handleToggle, handleDelete }: IProps) => {
         <p className={`${styles.text} ${task.completed && styles.completed}`}>{task.content}</p>
       </div>
       <div>
-        <Trash onClick={() => handleDelete(task.id)} className={styles.trash} size={16} />
+        <Trash onClick={() => handleDelete(task)} className={styles.trash} size={16} />
       </div>
     </div>
   )
