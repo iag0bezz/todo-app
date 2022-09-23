@@ -29,6 +29,12 @@
 ## 💻 Projeto
 
 Este projeto tem o intuíto para criação e organização de tarefas e atividades do dia a dia, com o foco em uma plataforma que funcione independente se estiver autenticado no sistema.
+<br/> <br/>
+O projeto possui uma funcionalidade final de realizar listas sem precisar de autenticação guardando os dados no `localStorage` do navegador e guardando no `banco de dados` quando autenticado.
+<br/>
+
+<strong>Observação</strong> O frontend foi baseado no primeiro desafio no `Ignite`, o modulo de React.JS da `Rocketseat` com o professor [Diego Schell Fernandes](https://github.com/diego3g), `CTO @Rocketseat`.
+
 ## 🚀 Como executar
 
 ### ✔️ Pré-requisitos
