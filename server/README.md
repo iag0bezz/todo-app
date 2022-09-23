@@ -23,22 +23,25 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
     
 ```bash
 # Instalando as dependências
-$ yarn install OR npm install
+$ yarn install | npm install
 
-# Executar o docker-compose para gerar o PostgresQL
+# Executar o docker-compose para gerar o banco de dados do PostgresQL.
 $ docker-compose up -D
 
 # Gerar um arquivo .env e inserir o modelo dentro de .env.example
 # Configurar o valor "DATABASE_URL" para o padrão Prisma (https://www.prisma.io/docs/concepts/database-connectors/postgresql)
 
-# Gerar o cliente usando Prisma
-$ yarn prisma generate OR npx prisma generate
+# Realizar o push do arquivo schema.prisma para o banco de dados PostgreSQL
+$ yarn prisma db push | npx prisma db push
 
-# Executar os testes 
-$ yarn test OR npm run test
+# Gerar o cliente usando Prisma
+$ yarn prisma generate | npx prisma generate
+
+# Executar os teste
+$ yarn test | npm run test
 
 # Executar o projeto em modo de desenvolvimento
-$ yarn dev OR npm run dev
+$ yarn dev | npm run dev
 ```
 
 ## 📝 Licença
