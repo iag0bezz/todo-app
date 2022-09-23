@@ -29,11 +29,11 @@ $ yarn dev OR npm run dev
 ## 📷 Fotos
 
 <div>
-  <img src="https://i.imgur.com/4sqRHwj.png" alt="Home Page" />
-  <img src="https://i.imgur.com/8EIbyjZ.png" alt="Home Page With Task Created" />
-  <img src="https://i.imgur.com/ZkxMRjw.png" alt="Home Page With Task Completed" />
-  <img src="https://i.imgur.com/n09pIz1.png" alt="Home Page Login Modal" />
-  <img src="https://i.imgur.com/DnTlfHW.png" alt="Home Page Authenticated With Task Completed" />
+  <img src="https://i.imgur.com/4sqRHwj.png" alt="Home Page" style="width: 100%;" />
+  <img src="https://i.imgur.com/8EIbyjZ.png" alt="Home Page With Task Created" style="width: 100%;" />
+  <img src="https://i.imgur.com/ZkxMRjw.png" alt="Home Page With Task Completed" style="width: 100%;" />
+  <img src="https://i.imgur.com/n09pIz1.png" alt="Home Page Login Modal" style="width: 100%;" />
+  <img src="https://i.imgur.com/DnTlfHW.png" alt="Home Page Authenticated With Task Completed" style="width: 100%;" />
 </div>
 
 ## 📝 Licença
